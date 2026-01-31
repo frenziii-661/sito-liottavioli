@@ -1,57 +1,62 @@
 import Link from 'next/link';
 
-export const metadata = {
-  title: 'Francesco Liotta Violi | Politico e Attivista',
-  description: 'Sito ufficiale di Francesco Liotta Violi. Focus su riforme del lavoro, diritti civili e visione federalista europea.',
-}
-
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-slate-200">
+    <main className="min-h-screen bg-white text-slate-900 font-sans">
       
-      {/* Navigazione */}
-      <nav className="max-w-5xl mx-auto px-6 py-8 flex justify-between items-center border-b border-slate-100">
-        <span className="font-bold tracking-tighter text-xl">FLV</span>
-        <div className="space-x-8 font-medium text-sm uppercase tracking-widest text-slate-500">
-          <Link href="/chi-sono" className="hover:text-black transition">Chi Sono</Link>
-          <Link href="/battaglie" className="hover:text-black transition">Battaglie</Link>
-          <Link href="/contatti" className="hover:text-black transition">Contatti</Link>
-        </div>
-      </nav>
+      {/* Banner Politico Mantova Adesso */}
+      <div className="bg-blue-600 text-white py-3 px-6 text-center text-sm font-bold tracking-wide uppercase">
+        Verso Mantova 2026: Scopri il progetto <Link href="/chi-sono" className="underline ml-2">Mantova Adesso</Link> ➔
+      </div>
 
       {/* Hero Section */}
-      <main className="max-w-4xl mx-auto px-6 pt-24 pb-32">
-        <h1 className="text-6xl font-extrabold tracking-tight mb-6 text-slate-900">
-          Francesco <span className="text-slate-400 font-light underline decoration-1 underline-offset-8">Liotta Violi</span>
-        </h1>
-        
-        <p className="text-xl text-slate-600 mb-12 font-medium tracking-wide">
-          Politico • Attivista • Diritti, Lavoro, Mercato
-        </p>
-
-        {/* Manifesto */}
-        <section className="bg-slate-50 p-8 rounded-2xl border border-slate-100 mb-16">
-          <p className="text-2xl leading-relaxed font-serif italic text-slate-800">
-            "Credo in una politica che non urla, ma progetta. Il mio percorso nasce dall’ascolto dei territori e si nutre della convinzione che diritti civili, dignità del lavoro e dinamismo del mercato non siano nemici, ma pilastri di una società moderna."
-          </p>
-        </section>
-
-        {/* Pulsanti di Azione */}
-        <div className="flex flex-col sm:flex-row gap-4 items-center">
-          <Link href="/chi-sono" className="w-full sm:w-auto text-center bg-black text-white px-10 py-4 rounded-full font-bold hover:bg-slate-800 transition shadow-lg shadow-slate-200">
-            Scopri la mia storia
-          </Link>
-          <Link href="mailto:info@liottavioli.eu" className="w-full sm:w-auto text-center border border-slate-200 px-10 py-4 rounded-full font-bold hover:bg-slate-50 transition">
-            Contattami
-          </Link>
+      <section className="max-w-6xl mx-auto px-6 pt-24 pb-20">
+        <div className="flex flex-col md:flex-row justify-between items-end gap-12">
+          <div className="max-w-4xl">
+            <h1 className="text-7xl md:text-9xl font-black tracking-tighter mb-8 italic leading-none">
+              FRANCESCO<br />LIOTTA VIOLI
+            </h1>
+            <p className="text-2xl md:text-4xl font-light leading-tight text-slate-500 max-w-2xl">
+              Economia, Diritto e Politica. <br />
+              Dall'impegno per <strong>Mantova</strong> alla visione <strong>Europea</strong>.
+            </p>
+          </div>
+          <div className="flex flex-col gap-4 w-full md:w-auto">
+            <Link href="/chi-sono" className="bg-black text-white px-10 py-5 rounded-full font-bold text-center hover:scale-105 transition-transform">
+              Profilo
+            </Link>
+            <Link href="/battaglie" className="border border-slate-200 px-10 py-5 rounded-full font-bold text-center hover:bg-slate-50 transition">
+              Battaglie
+            </Link>
+          </div>
         </div>
-      </main>
+      </section>
 
-      {/* Footer */}
-      <footer className="max-w-5xl mx-auto px-6 py-12 border-t border-slate-100 text-slate-400 text-sm flex justify-between">
+      {/* Sezione Highlights */}
+      <section className="max-w-6xl mx-auto px-6 py-24 border-t border-slate-100">
+        <div className="grid md:grid-cols-3 gap-16">
+          <div>
+            <h3 className="text-xs font-black uppercase tracking-widest text-blue-600 mb-6 italic">Leadership Politica</h3>
+            <p className="text-xl leading-relaxed font-medium">Coordinatore di <strong>Mantova Adesso</strong> e Tesoriere GFE. Attivista politico dai 14 anni.</p>
+          </div>
+          <div>
+            <h3 className="text-xs font-black uppercase tracking-widest text-green-600 mb-6 italic">Impresa & ESG</h3>
+            <p className="text-xl leading-relaxed font-medium">Fondatore di <strong>Aurora ESG</strong> e Vicepresidente di E•Club Bicocca. Consulenza e network.</p>
+          </div>
+          <div>
+            <h3 className="text-xs font-black uppercase tracking-widest text-purple-600 mb-6 italic">Competenza Tecnica</h3>
+            <p className="text-xl leading-relaxed font-medium">Revisore dei Conti. Specializzando in <strong>Concorrenza e Mercati</strong> (Giurisprudenza).</p>
+          </div>
+        </div>
+      </section>
+
+      <footer className="max-w-6xl mx-auto px-6 py-12 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-400 text-xs font-bold uppercase tracking-widest">
         <p>© 2026 Francesco Liotta Violi</p>
-        <p>info@liottavioli.eu</p>
+        <div className="flex gap-8">
+          <a href="https://www.linkedin.com/in/francescoliottavioli" className="hover:text-black">LinkedIn</a>
+          <a href="mailto:info@liottavioli.eu" className="hover:text-black">Contatti</a>
+        </div>
       </footer>
-    </div>
-  )
+    </main>
+  );
 }
