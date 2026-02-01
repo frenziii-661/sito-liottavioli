@@ -25,7 +25,7 @@ export default function Home() {
           
           {/* Tua Foto */}
           <div className="flex-1 w-full max-w-md">
-            <img src="/foto-francesco.jpeg" alt="Francesco Liotta Violi" className="rounded-3xl shadow-2xl grayscale hover:grayscale-0 transition duration-500" />
+            <img src="/foto-francesco.jpeg" alt="Francesco Liotta Violi" className="rounded-3xl shadow-2xl object-cover transition duration-500" />
           </div>
         </div>
       </section>

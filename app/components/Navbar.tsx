@@ -6,7 +6,7 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto flex justify-between items-center">
         {/* Tuo Logo Personale */}
         <Link href="/">
-          <img src="/logo-personale.png" alt="Logo Francesco Liotta Violi" className="h-8 md:h-10 hover:opacity-80 transition" />
+          <img src="/logo-personale.png" alt="Logo Francesco Liotta Violi" className="h-12 md:h-16 hover:opacity-80 transition" />
         </Link>
 
         {/* Menu Navigazione */}
