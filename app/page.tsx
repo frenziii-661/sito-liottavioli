@@ -1,60 +1,57 @@
+import Navbar from './components/Navbar';
 import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white text-slate-900 font-sans">
-      
-      {/* Banner Politico Mantova Adesso */}
-      <div className="bg-blue-600 text-white py-3 px-6 text-center text-sm font-bold tracking-wide uppercase">
-        Verso Mantova 2026: Scopri il progetto <Link href="/chi-sono" className="underline ml-2">Mantova Adesso</Link> ➔
-      </div>
+    <main className="min-h-screen bg-white text-slate-900 font-sans pt-20">
+      <Navbar />
 
-      {/* Hero Section */}
-      <section className="max-w-6xl mx-auto px-6 pt-24 pb-20">
-        <div className="flex flex-col md:flex-row justify-between items-end gap-12">
-          <div className="max-w-4xl">
-            <h1 className="text-7xl md:text-9xl font-black tracking-tighter mb-8 italic leading-none">
+      {/* Hero Section con la tua Foto */}
+      <section className="max-w-6xl mx-auto px-6 pt-16 pb-20">
+        <div className="flex flex-col md:flex-row items-center gap-12">
+          <div className="flex-1">
+            <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-8 italic leading-none">
               FRANCESCO<br />LIOTTA VIOLI
             </h1>
-            <p className="text-2xl md:text-4xl font-light leading-tight text-slate-500 max-w-2xl">
+            <p className="text-2xl md:text-3xl font-light text-slate-500 mb-8">
               Economia, Diritto e Politica. <br />
-              Dall'impegno per <strong>Mantova</strong> alla visione <strong>Europea</strong>.
+              Un progetto liberale per il futuro di Mantova.
             </p>
+            <div className="flex gap-4">
+              <Link href="/chi-sono" className="bg-black text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition">Profilo</Link>
+              <Link href="/contatti" className="border border-slate-200 px-8 py-4 rounded-full font-bold hover:bg-slate-50 transition">Scrivimi</Link>
+            </div>
           </div>
-          <div className="flex flex-col gap-4 w-full md:w-auto">
-            <Link href="/chi-sono" className="bg-black text-white px-10 py-5 rounded-full font-bold text-center hover:scale-105 transition-transform">
-              Profilo
-            </Link>
-            <Link href="/battaglie" className="border border-slate-200 px-10 py-5 rounded-full font-bold text-center hover:bg-slate-50 transition">
-              Battaglie
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Sezione Highlights */}
-      <section className="max-w-6xl mx-auto px-6 py-24 border-t border-slate-100">
-        <div className="grid md:grid-cols-3 gap-16">
-          <div>
-            <h3 className="text-xs font-black uppercase tracking-widest text-blue-600 mb-6 italic">Leadership Politica</h3>
-            <p className="text-xl leading-relaxed font-medium">Coordinatore di <strong>Mantova Adesso</strong> e Tesoriere GFE. Attivista politico dai 14 anni.</p>
-          </div>
-          <div>
-            <h3 className="text-xs font-black uppercase tracking-widest text-green-600 mb-6 italic">Impresa & ESG</h3>
-            <p className="text-xl leading-relaxed font-medium">Fondatore di <strong>Aurora ESG</strong> e Vicepresidente di E•Club Bicocca. Consulenza e network.</p>
-          </div>
-          <div>
-            <h3 className="text-xs font-black uppercase tracking-widest text-purple-600 mb-6 italic">Competenza Tecnica</h3>
-            <p className="text-xl leading-relaxed font-medium">Revisore dei Conti. Specializzando in <strong>Concorrenza e Mercati</strong> (Giurisprudenza).</p>
+          
+          {/* Tua Foto */}
+          <div className="flex-1 w-full max-w-md">
+            <img src="/foto-francesco.jpeg" alt="Francesco Liotta Violi" className="rounded-3xl shadow-2xl grayscale hover:grayscale-0 transition duration-500" />
           </div>
         </div>
       </section>
 
-      <footer className="max-w-6xl mx-auto px-6 py-12 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-400 text-xs font-bold uppercase tracking-widest">
+      {/* Banner Mantova Adesso con Logo */}
+      <section className="bg-blue-600 py-16">
+        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8 text-white">
+          <div className="flex items-center gap-6">
+            <img src="/logo-mentova-adesso.png" alt="Logo Mantova Adesso" className="h-24 md:h-32 brightness-0 invert" />
+            <div>
+              <h2 className="text-3xl font-black italic uppercase">Mantova Adesso</h2>
+              <p className="text-xl opacity-90 font-light">Liberali e Riformisti per il 2026</p>
+            </div>
+          </div>
+          <Link href="/news" className="bg-white text-blue-600 px-10 py-4 rounded-full font-black uppercase tracking-widest hover:bg-blue-50 transition">
+            Scopri il Progetto
+          </Link>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="max-w-6xl mx-auto px-6 py-12 border-t border-slate-100 flex justify-between text-slate-400 text-xs font-bold uppercase tracking-widest mt-20">
         <p>© 2026 Francesco Liotta Violi</p>
         <div className="flex gap-8">
-          <a href="https://www.linkedin.com/in/francescoliottavioli" className="hover:text-black">LinkedIn</a>
-          <a href="mailto:info@liottavioli.eu" className="hover:text-black">Contatti</a>
+          <a href="https://www.linkedin.com/in/francescoliottavioli" target="_blank" className="hover:text-black">LinkedIn</a>
+          <a href="mailto:info@liottavioli.eu" className="hover:text-black">Email</a>
         </div>
       </footer>
     </main>
