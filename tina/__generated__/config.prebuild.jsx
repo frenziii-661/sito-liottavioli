@@ -2,9 +2,9 @@
 import { defineConfig } from "tinacms";
 var config_default = defineConfig({
   branch: "main",
-  clientId: null,
+  clientId: "",
   // Lascia null per il lavoro in locale
-  token: null,
+  token: "",
   // Lascia null per il lavoro in locale
   build: {
     outputFolder: "admin",
