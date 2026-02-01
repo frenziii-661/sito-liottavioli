@@ -50,6 +50,7 @@ export default function Home() {
     </Link>
   </div>
 </section>
+
       {/* Footer */}
       <footer className="max-w-6xl mx-auto px-6 py-12 border-t border-slate-100 flex justify-between text-slate-400 text-xs font-bold uppercase tracking-widest mt-20">
         <p>© 2026 Francesco Liotta Violi</p>
