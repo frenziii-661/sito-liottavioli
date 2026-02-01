@@ -31,21 +31,25 @@ export default function Home() {
       </section>
 
       {/* Banner Mantova Adesso con Logo */}
-      <section className="bg-blue-600 py-16">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8 text-white">
-          <div className="flex items-center gap-6">
-            <img src="/logo-mentova-adesso.png" alt="Logo Mantova Adesso" className="h-24 md:h-32 brightness-0 invert" />
-            <div>
-              <h2 className="text-3xl font-black italic uppercase">Mantova Adesso</h2>
-              <p className="text-xl opacity-90 font-light">Liberali e Riformisti per il 2026</p>
-            </div>
-          </div>
-          <Link href="/news" className="bg-white text-blue-600 px-10 py-4 rounded-full font-black uppercase tracking-widest hover:bg-blue-50 transition">
-            Scopri il Progetto
-          </Link>
-        </div>
-      </section>
-
+<section className="bg-blue-600 py-16">
+  <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8 text-white">
+    <div className="flex items-center gap-6">
+      {/* Ho corretto il nome in mantova con la 'a' */}
+      <img 
+        src="/logo-mantova-adesso.png" 
+        alt="Logo Mantova Adesso" 
+        className="h-24 md:h-32 object-contain" 
+      />
+      <div>
+        <h2 className="text-3xl font-black italic uppercase">Mantova Adesso</h2>
+        <p className="text-xl opacity-90 font-light">Liberali e Riformisti per il 2026</p>
+      </div>
+    </div>
+    <Link href="/news" className="bg-white text-blue-600 px-10 py-4 rounded-full font-black uppercase tracking-widest hover:bg-blue-50 transition">
+      Scopri il Progetto
+    </Link>
+  </div>
+</section>
       {/* Footer */}
       <footer className="max-w-6xl mx-auto px-6 py-12 border-t border-slate-100 flex justify-between text-slate-400 text-xs font-bold uppercase tracking-widest mt-20">
         <p>© 2026 Francesco Liotta Violi</p>
