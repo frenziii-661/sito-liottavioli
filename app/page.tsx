@@ -1,64 +1,67 @@
-import Navbar from './components/Navbar';
-import Link from 'next/link';
+import client from "@/tina/__generated__/client";
+import Link from "next/link";
 
-export default function Home() {
+export default async function Home() {
+  const res = await client.queries.page({ relativePath: "home.md" });
+  const data = res.data.page;
+
   return (
-    <main className="min-h-screen bg-white text-slate-900 font-sans pt-20">
-      <Navbar />
-
-      {/* Hero Section con la tua Foto */}
-      <section className="max-w-6xl mx-auto px-6 pt-16 pb-20">
-        <div className="flex flex-col md:flex-row items-center gap-12">
-          <div className="flex-1">
-            <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-8 italic leading-none">
-              FRANCESCO<br />LIOTTA VIOLI
-            </h1>
-            <p className="text-2xl md:text-3xl font-light text-slate-500 mb-8">
-              Economia, Diritto e Politica. <br />
-              Un progetto liberale per il futuro di Mantova.
-            </p>
-            <div className="flex gap-4">
-              <Link href="/chi-sono" className="bg-black text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition">Profilo</Link>
-              <Link href="/contatti" className="border border-slate-200 px-8 py-4 rounded-full font-bold hover:bg-slate-50 transition">Scrivimi</Link>
-            </div>
+    <div className="min-h-screen bg-white text-slate-900 font-sans">
+      {/* NAVBAR */}
+      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-slate-100">
+        <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            {/* LOGO PERSONALE */}
+            <img src="/logo-personale.png" alt="Logo FL" className="h-12 w-auto" />
+            <span className="font-bold tracking-tight text-xl uppercase">
+              {data.titolo_grande}
+            </span>
           </div>
           
-          {/* Tua Foto */}
-          <div className="flex-1 w-full max-w-md">
-            <img src="/foto-francesco.jpeg" alt="Francesco Liotta Violi" className="rounded-3xl shadow-2xl object-cover transition duration-500" />
+          <div className="hidden md:flex items-center gap-8 text-sm font-semibold uppercase tracking-widest text-slate-500">
+            <Link href="/" className="text-slate-900 border-b-2 border-slate-900">Home</Link>
+            <Link href="/biografia" className="hover:text-slate-900 transition">Biografia</Link>
+            <Link href="/news" className="hover:text-slate-900 transition">News</Link>
+            <Link href="/contatti" className="hover:text-slate-900 transition">Contatti</Link>
           </div>
         </div>
-      </section>
+      </nav>
 
-      {/* Banner Mantova Adesso con Logo */}
-<section className="bg-blue-600 py-16">
-  <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8 text-white">
-    <div className="flex items-center gap-6">
-      {/* Ho corretto il nome in mantova con la 'a' */}
-      <img 
-        src="/logo-mantova-adesso.png" 
-        alt="Logo Mantova Adesso" 
-        className="h-24 md:h-32 object-contain" 
-      />
-      <div>
-        <h2 className="text-3xl font-black italic uppercase">Mantova Adesso</h2>
-        <p className="text-xl opacity-90 font-light">Liberali e Riformisti per il 2026</p>
-      </div>
-    </div>
-    <Link href="/news" className="bg-white text-blue-600 px-10 py-4 rounded-full font-black uppercase tracking-widest hover:bg-blue-50 transition">
-      Scopri il Progetto
-    </Link>
-  </div>
-</section>
+      {/* HERO SECTION */}
+      <main className="pt-32 md:pt-48 pb-20 px-6">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
+          
+          <div className="flex-1 space-y-8">
+            <h1 className="text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] italic uppercase">
+              {data.titolo_grande}
+            </h1>
+            <p className="text-xl md:text-2xl text-slate-600 font-medium leading-relaxed max-w-xl border-l-4 border-slate-900 pl-6">
+              {data.sottotitolo}
+            </p>
+            
+            {/* LOGO MANTOVA ADESSO */}
+            <div className="pt-4 flex items-center gap-6">
+              <img src="/logo-mantova-adesso.png" alt="Mantova Adesso" className="h-20 w-auto" />
+              <button className="bg-slate-900 text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest hover:bg-slate-800 transition shadow-xl">
+                Il Progetto
+              </button>
+            </div>
+          </div>
 
-      {/* Footer */}
-      <footer className="max-w-6xl mx-auto px-6 py-12 border-t border-slate-100 flex justify-between text-slate-400 text-xs font-bold uppercase tracking-widest mt-20">
-        <p>© 2026 Francesco Liotta Violi</p>
-        <div className="flex gap-8">
-          <a href="https://www.linkedin.com/in/francescoliottavioli" target="_blank" className="hover:text-black">LinkedIn</a>
-          <a href="mailto:info@liottavioli.eu" className="hover:text-black">Email</a>
+          {/* FOTO FRANCESCO */}
+          <div className="flex-1 w-full relative">
+            <div className="relative z-10 overflow-hidden rounded-[2rem] shadow-2xl">
+              <img 
+                src="/foto-francesco.jpeg" 
+                alt="Francesco Liotta Violi" 
+                className="w-full h-auto object-cover"
+              />
+            </div>
+            <div className="absolute -bottom-6 -right-6 w-64 h-64 bg-slate-100 rounded-full -z-0"></div>
+          </div>
+
         </div>
-      </footer>
-    </main>
+      </main>
+    </div>
   );
 }
