@@ -2,11 +2,10 @@
   "name": "liottavioli-site",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-  "dev": "tinacms dev -c \"next dev\"",
+ "scripts": {
+  "dev": "tinacms dev -c \"next build\"",
   "build": "tinacms build --local && next build",
-  "start": "next start",
-  "lint": "next lint"
+  "start": "next start"
 },
   "dependencies": {
     "fs-extra": "^11.3.3",
@@ -18,11 +17,11 @@
     "slate": "^0.123.0",
     "slate-hyperscript": "^0.100.0",
     "slate-react": "^0.123.0",
-    "tinacms": "^3.3.2"
+    "tinacms": "latest"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
-    "@tinacms/cli": "^2.1.2",
+    "@tinacms/cli": "latest",
     "@types/node": "^20.19.30",
     "@types/react": "^19",
     "@types/react-dom": "^19",
