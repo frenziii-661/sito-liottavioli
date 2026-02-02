@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "tinacms dev -c \"next dev\"",
-    "build": "tinacms build --local && next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
+  "dev": "tinacms dev -c \"next dev\"",
+  "build": "tinacms build --local && next build",
+  "start": "next start",
+  "lint": "next lint"
+},
   "dependencies": {
     "fs-extra": "^11.3.3",
     "next": "14.2.23",
